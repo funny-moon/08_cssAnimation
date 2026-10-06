@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box_line {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #000;
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        z-index: -1;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+
+        animation: box 3s infinite;
+      }
+      .box:hover {
+        animation-play-state: paused;
+      }
+      @keyframes box {
+        0% {
+          transform: translate(0, 0) rotate(0);
+          background-color: red;
+        }
+        25% {
+          transform: translate(500px, 0) rotate(90deg);
+          background-color: green;
+        }
+        50% {
+          transform: translate(500px, 500px) rotate(180deg);
+          background-color: blue;
+        }
+        75% {
+          transform: translate(0, 500px) rotate(270deg);
+          background-color: orange;
+        }
+        100% {
+          transform: translate(0, 0) rotate(360deg);
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">GO!</div>
+    <div class="box_line"></div>
+  </body>
+</html>

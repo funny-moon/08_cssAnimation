@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        perspective: 1000px;
+      }
+      .cube {
+        width: 100px;
+        height: 100px;
+        position: relative;
+
+        transform-style: preserve-3d;
+        transform-origin: center;
+        animation: cube 5s ease-in-out infinite;
+      }
+      @keyframes cube {
+        0% {
+          transform: rotateX(0) rotateY(0) rotateZ(0);
+        }
+        100% {
+          transform: rotateX(720deg) rotateY(230deg) rotateZ(720deg);
+        }
+      }
+      .cube div {
+        width: 100px;
+        height: 100px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #fff;
+        opacity: 0.7;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .cube div:nth-child(1) {
+        background-color: red;
+        transform-origin: right center;
+        transform: translateX(-100px) translateZ(50px) rotateY(-90deg);
+      }
+      .cube div:nth-child(2) {
+        background-color: orange;
+        transform-origin: left center;
+        transform: translateX(100px) translateZ(50px) rotateY(90deg);
+      }
+      .cube div:nth-child(3) {
+        background-color: green;
+        transform-origin: center bottom;
+        transform: translateY(-100px) translateZ(50px) rotateX(90deg);
+      }
+      .cube div:nth-child(4) {
+        background-color: blue;
+        transform-origin: center top;
+        transform: translateY(100px) translateZ(50px) rotateX(-90deg);
+      }
+      .cube div:nth-child(5) {
+        background-color: navy;
+        transform: translateZ(50px);
+      }
+      .cube div:nth-child(6) {
+        background-color: hotpink;
+        transform: translateZ(-50px) rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cube">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+  </body>
+</html>
